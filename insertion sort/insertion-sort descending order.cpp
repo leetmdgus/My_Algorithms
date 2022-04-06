@@ -16,14 +16,14 @@ int main(void)
 
         comp = index-1; 
         if(index == 1){
-            if(key < A[comp]){
+            if(key > A[comp]){
                 A[index] = A[comp];
                 A[0] = key;
             }
 
         }else{
             while(comp >=0){
-                if(key < A[comp]){           // A[comp] 가 key값보다 작다면
+                if(key > A[comp]){           // A[comp] 가 key값보다 작다면
                     A[comp+1] = A[comp];      // 오른쪽으로 한칸 미는 작업이다. key값이 들어갈 자리를 확보하기 위해서이다.
                 }else{
                     A[comp+1] = key;
