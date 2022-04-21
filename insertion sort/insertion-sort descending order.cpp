@@ -5,7 +5,7 @@ int length(int A); //배열 A의 사이즈를 구하는 함수
 
 int main(void)
 {
-    int A[] = {5,2,4,6,1,3};    //index값은 0부터 시작한다. (A[0] = 5, A[1] = 2, A[2] = 3)
+    int A[] = {7,219,22,30722,82};    //index값은 0부터 시작한다. (A[0] = 5, A[1] = 2, A[2] = 3)
     int key, comp;
     
     int lengthA= sizeof(A)/sizeof(A[0]); //sizeof는 요소의 byte수를 리턴
