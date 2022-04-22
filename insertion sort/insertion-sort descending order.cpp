@@ -1,18 +1,18 @@
 #include <iostream>
 
 using namespace std;
-int length(int A); //ë°°ì—´ Aì˜ ì‚¬ì´ì¦ˆë¥¼ êµ¬í•˜ëŠ” í•¨ìˆ˜
+int length(int A); //¹è¿­ AÀÇ »çÀÌÁî¸¦ ±¸ÇÏ´Â ÇÔ¼ö
 
 int main(void)
 {
-    int A[] = {7,219,22,30722,82};    //indexê°’ì€ 0ë¶€í„° ì‹œì‘í•œë‹¤. (A[0] = 5, A[1] = 2, A[2] = 3)
+    int A[] = {7,219,22,30722,82};    //index°ªÀº 0ºÎÅÍ ½ÃÀÛÇÑ´Ù. (A[0] = 5, A[1] = 2, A[2] = 3)
     int key, comp;
     
-    int lengthA= sizeof(A)/sizeof(A[0]); //sizeofëŠ” ìš”ì†Œì˜ byteìˆ˜ë¥¼ ë¦¬í„´
+    int lengthA= sizeof(A)/sizeof(A[0]); //sizeof´Â ¿ä¼ÒÀÇ byte¼ö¸¦ ¸®ÅÏ
 
 
     for(int index = 1; index <lengthA; index++){
-        key = A[index]; //  A[index]ê°’ì„ ì €ì¥í•œë‹¤.
+        key = A[index]; //  A[index]°ªÀ» ÀúÀåÇÑ´Ù.
 
         comp = index-1; 
         if(index == 1){
@@ -23,12 +23,12 @@ int main(void)
 
         }else{
             while(comp >=0){
-                if(key > A[comp]){           // A[comp] ê°€ keyê°’ë³´ë‹¤ ì‘ë‹¤ë©´
-                    A[comp+1] = A[comp];      // ì˜¤ë¥¸ìª½ìœ¼ë¡œ í•œì¹¸ ë¯¸ëŠ” ì‘ì—…ì´ë‹¤. keyê°’ì´ ë“¤ì–´ê°ˆ ìë¦¬ë¥¼ í™•ë³´í•˜ê¸° ìœ„í•´ì„œì´ë‹¤.
+                if(key > A[comp]){           // A[comp] °¡ key°ªº¸´Ù ÀÛ´Ù¸é
+                    A[comp+1] = A[comp];      // ¿À¸¥ÂÊÀ¸·Î ÇÑÄ­ ¹Ì´Â ÀÛ¾÷ÀÌ´Ù. key°ªÀÌ µé¾î°¥ ÀÚ¸®¸¦ È®º¸ÇÏ±â À§ÇØ¼­ÀÌ´Ù.
                 }else{
                     A[comp+1] = key;
                     break;       
-                }if(comp == 0){ //A[comp]ê°€ 0. ì¦‰, ëª¨ë“  ìˆ˜ê°€ key ê°’ë³´ë‹¤ í¬ë‹¤ë©´
+                }if(comp == 0){ //A[comp]°¡ 0. Áï, ¸ğµç ¼ö°¡ key °ªº¸´Ù Å©´Ù¸é
                     A[0] = key; 
                     
                 }
