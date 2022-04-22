@@ -3,6 +3,16 @@
         "ostream": "cpp",
         "string": "cpp",
         "xstring": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "xutility": "cpp",
+        "stack": "cpp",
+        "xmemory": "cpp",
+        "thread": "cpp",
+        "vector": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "xhash": "cpp",
+        "iosfwd": "cpp",
+        "xlocale": "cpp"
     }
 }
