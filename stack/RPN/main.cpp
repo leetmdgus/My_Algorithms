@@ -1,9 +1,5 @@
-
 #include <iostream>
-#include "RPN.h"
-
 using namespace std;
-
 
 class Stack
 {
@@ -26,9 +22,13 @@ private:
 int main(void)
 {
     Stack s1;
-    s1.Push(3);
-    s1.Push(4);
+    s1.Push(2);
+    s1.Push(5);
     s1.operate('+');
+    s1.Push(3);
+    s1.operate('*');
+    s1.Push(1);
+    s1.operate('-');
     s1.printStack();
 }
 
@@ -48,8 +48,8 @@ int Stack::Pop()
         return -1;
 
     int temp = Top;
+    
     --Top;
-
     return stack[temp];
 }
 
@@ -60,33 +60,47 @@ bool Stack::is_Empty()
 
 void Stack::operate(char oper)
 {
+    int val1 = Pop();
+    int val2 = Pop();
+
+    int result;
     switch (oper)
     {
     case '+':
-        stack[Top-1] += stack[Top];
+        result = val2+val1;
         break;
     case '-':
-        stack[Top-1] -= stack[Top];
+        result = val2-val1;
         break;
         
     case '*':
-        stack[Top-1] *= stack[Top];
+        result = val2*val1;
         break;
     
     case '/':
-        stack[Top-1] /= stack[Top];
+        result = val2/val1;
         break;
     
     default:
         break;
     }
+
+    Push(result);
+
 }
 
 void Stack::printStack()
 {
-    if(Top >1)
+    for(int i = 0; i<=Top; i++)
+        cout<<stack[i]<<" ";
+        
+    cout<<endl;
+    cout<<"Top: "<<Top<<endl;
+
+
+    if(Top > 1)
         cout<<"스택이 비어있지 않습니다." <<endl;
-    else  if(Top == 0)
+    else  if(Top == -1)
         cout<<"값: "<<0<<endl;
     else   
         cout<<"값: "<<stack[Top]<<endl;

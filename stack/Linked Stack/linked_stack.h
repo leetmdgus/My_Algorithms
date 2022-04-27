@@ -1,9 +1,9 @@
 typedef int element; //int형 자료형에 element라 별칭 붙임.
 
-typedef struct 
+typedef struct Node
 {
     element Data;   //스택 데이터를 정수 타입으로 가정
-    node *Next; //다음 노드를 가리키는 포인터 변수
+    Node *Next; //다음 노드를 가리키는 포인터 변수
 
 }node;  //노드는 구조체 타입
 

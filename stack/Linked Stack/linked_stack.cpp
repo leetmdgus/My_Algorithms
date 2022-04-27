@@ -23,7 +23,7 @@ bool LinkedStack::IsEmpty() //스택이 비어있는지 확인하는 함수
 
 bool LinkedStack::IsFull()  //꽉차 있는지 확인
 {
-    return !IsEmpty;    //isEmpty 함수가 True면 False
+    return !IsEmpty();    //isEmpty 함수가 True면 False
 }
 
 
@@ -37,7 +37,7 @@ void LinkedStack::Push(element item)    //스택의 삽입 함수
 
 element LinkedStack::Pop()
 {
-    if(IsEmpty)
+    if(IsEmpty())
         cout<<"스택이 비어있습니다."<<endl;
     else
     {
