@@ -156,13 +156,13 @@ int Queue::Dequeue()
 
 bool Queue::IsFull() 
 {   //큐가 가득찼다면 ture, 아니면 false이다. 
-    int next_front = front+1; 
-    if(next_front == capacity)
-    {//만약 next_front가 큐의 범위를 초과했다면 0이라 설정한다. 
-        next_front = 0;
+    int next_rear = rear+1; 
+    if(next_rear == capacity)
+    {//만약 next_rear가 큐의 범위를 초과했다면 0이라 설정한다. 
+        next_rear = 0;
     }
-    return (next_front == rear) ? true : false;
-    // next_front가 rear와 같다면 이것은 가득 찬 큐다. 
+    return (next_rear == front) ? true : false;
+    // next_rear와 front 같다면 이것은 가득 찬 큐다. 
 }
 
 bool Queue::IsOneData() 
