@@ -10,7 +10,13 @@ template <typename T>
 class doublyLinkedList {
 public: 
   doublyLinkedList():size(0), tail(nullptr), head(nullptr){}
-  ~doublyLinkedList(){}
+  ~doublyLinkedList()
+  {
+    while(!isEmpty())
+    {
+      remove(0);
+    }
+  }
 
   void add(T value)
   {
@@ -102,7 +108,7 @@ public:
     node->next = nullptr;
     node->prev = nullptr;
     delete = node;
-    
+
   }
   T get(int index)
   {
@@ -176,10 +182,6 @@ private:
       }
     }
     return node;
-  }
-  Node<T>* instanceNode(T value)
-  {
-
   }
 
 private:
