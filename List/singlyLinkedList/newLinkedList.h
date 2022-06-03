@@ -35,7 +35,7 @@ public:
 
     void add(T element, int index) //생각
     {
-        if(index<0||index>size)
+        if(indexCheck())
         {
             return;
         }    
@@ -60,6 +60,16 @@ public:
 
     bool remove(int index)
     {  
+        if(indexCheck())
+        {
+            return;
+        }    
+        if(isEmpty())
+        {
+          return;
+        }
+
+        size--;
         if (index == 0)
         {
             if (size == 1)  //size 1일때 생각해보기
@@ -67,13 +77,13 @@ public:
                 head = nullptr;
                 delete tail;
                 tail = nullptr;
+                return;
             }
-            else
-            {
-                Node<T>* oldNode = head;
-                head = head->next;
-                delete oldNode;
-            }
+            Node<T>* oldNode = head;
+            head = head->next;
+            delete oldNode;
+            return;
+
         }
         else if (index == size - 1)
         {
@@ -83,24 +93,20 @@ public:
             tail = preNode;
             tail->next = nullptr;
             delete oldNode;
-        }
-        else
-        {
-            Node<T>* preNode = getNode(--index);
-            Node<T>* oldNode = preNode->next;
-
-            preNode->next = oldNode->next;
-            delete oldNode;
+            return;
         }
 
-        size--;
+        Node<T>* preNode = getNode(--index);
+        Node<T>* oldNode = preNode->next;
+
+        preNode->next = oldNode->next;
+        delete oldNode;
     }
 
     T get(int index)
     {
-      Node<T>* node = getNode(index);
-      T value = node->element;
-      return value;
+      Node<T>* node = getNode(index); // getNode indexCheck
+      return node->element;
     }
 
     T set(T element, int index)
@@ -115,21 +121,19 @@ public:
     
     int indexOf(T element)
     {
-        int index = -1;
-        Node<T>* node = head;
         if (!isEmpty())
         {
-          for(int i = 0; i<size; i++)
+          Node<T>* node = head;
+          for(int i = 0; i<size; i++) // nude == null일때 체크
           {
-            index = i;
             if(node->element == element)
             {
-              break;
+              return i;
             }
             node = node->next;
           }
         }
-        return index;
+        return -1;
     }
     
     int getSize()
@@ -142,6 +146,10 @@ public:
     }
 
 private: 
+    bool indexCheck(int index)
+    {
+      return (index<0||index>size)
+    }
     Node<T>* getNode(int index) 
     {
         Node<T>* node = head;

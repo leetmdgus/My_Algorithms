@@ -2,15 +2,16 @@ template <typename T>
 class Node{
 public:
     Node(T element): element(element), prev(nullptr), next(nullptr) {}
+    ~Node(){}
     T element;
     Node *prev, *next; 
 };
 
 template <typename T>
-class doublyLinkedList {
+class DoublyLinkedList {
 public: 
-  doublyLinkedList():size(0), tail(nullptr), head(nullptr){}
-  ~doublyLinkedList()
+  DoublyLinkedList():size(0), tail(nullptr), head(nullptr){}
+  ~DoublyLinkedList()
   {
     while(!isEmpty())
     {
@@ -48,13 +49,14 @@ public:
 
     size++;
     Node<T>* newNode = new Node(value);
-    if(index == 0)
+  if(index == 0)
     {
       newNode->next = head;
       head->prev = newNode;
       head = newNode;
       return;
     }
+
     Node<T>* node = getNode(index)->prev;
     newNode->prev = node;
     newNode->next = node->next;
@@ -62,6 +64,7 @@ public:
     node->next->prev = newNode;
 
   }
+  
   void remove(int index)
   {
     if(indexCheck(index))
@@ -72,7 +75,7 @@ public:
     {
       return;
     } 
-    else if(head == tail) // size == 1;
+    else if(head == tail) // size == 1;/// size-1 == 0; 
     {
       delete head;
       head = nullptr;
@@ -86,7 +89,7 @@ public:
     if(index == 0)
     {
       head = head->next;
-      head->prev = nullptr;
+      head->prev = nullptr; 
 
       node->next = nullptr;
       delete node;
@@ -103,22 +106,23 @@ public:
     }
     
     node->prev->next = node->next;
-    node->next->prev = node->prv;
+    // prevNode->next = nextNode;
+
+    node->next->prev = node->prev;
 
     node->next = nullptr;
     node->prev = nullptr;
-    delete = node;
+    delete node;
 
   }
   T get(int index)
   {
-    if(indexCheck(index))
+    if(indexCheck(index)) // get 이랑 set이랑 너무 비슷한데
     {
       return;
     }
     Node<T>* node = getNode(index);
     T value = node->element;
-    node->element = value;
     return value;
   }
   T set(T value, int index)
@@ -127,10 +131,11 @@ public:
     {
       return;
     }
+    
     Node<T>* node = getNode(index);
-    T value = node->element;
-    node->element = value;
-    return value;
+    T element = node->element;
+    node->element = value; 
+    return element;
   }
 
   int indexOf(T value)
@@ -160,9 +165,11 @@ private:
   {
     return (index<0 || index>size);
   }
+
   Node<T>* getNode(int index){
     int repeat;
     Node<T>* node;
+    
     if(index <= (size-1)/2)
     {
       node = head;
@@ -181,6 +188,7 @@ private:
         node = node->prev;
       }
     }
+
     return node;
   }
 

@@ -1,10 +1,10 @@
 template <typename T>
 class Node {
 public:
-    Node(T value) :element(value), next(nullptr) {};
+    Node<T>(T value) :element(value), next(nullptr) {};
     
     T element;
-    Node* next;
+    Node<T>* next;
 };
 
 template <typename T>
@@ -54,7 +54,7 @@ public:
   T pop()
   {
     Node<T>* oldNode = tail;
-    Node<T>* preNode = getNode(size-2);
+    Node<T>* preNode = getNode(size-2); // node집어넣기 
 
     tail = preNode;
     tail->next = oldNode->next;

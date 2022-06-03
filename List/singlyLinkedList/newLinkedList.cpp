@@ -3,7 +3,6 @@
 // 터미널 프로세스 "C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -Command g++ c:\ALGORITHMS\List\singlyLinkedList\newLinkedList.cpp -o c:\ALGORITHMS\List\singlyLinkedList/newLinkedList"이(가) 종료되었습니다(종료 코드: 1).
 // -> template은 선언과 정의를 분리해서는 안됨
 
-// 이게 뭔 에러야..ㅜㅜ
 #include "newLinkedList.h"
 #include <iostream>
 using namespace std;
@@ -13,13 +12,8 @@ using namespace std;
 
 int main(void)
 {
-	try {
-		LinkedList<int> list;
-
-	}
-	catch (int size) {
-		cout << "list size: " << size << endl;
-	}
+  LinkedList<string> list;
+	
 	
 	return 0;
 }
