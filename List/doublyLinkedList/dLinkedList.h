@@ -51,7 +51,7 @@ public:
             return;
         }
 
-        Node<T>* node = getNode(index)->prev;
+        Node<T>* node = getNodeAtIndex(index)->prev;
         newNode->prev = node;
         newNode->next = node->next;
         node->next = newNode;
@@ -74,7 +74,7 @@ public:
             return;
         }
 
-        Node<T>* node = getNode(index);
+        Node<T>* node = getNodeAtIndex(index);
         size--;
         if (index == 0) {
             head = head->next;
@@ -105,14 +105,14 @@ public:
     // isIndexOutOfRange(index) == true일 경우 반환값 추가하기
     T getInIndex(int index) {
         if (!isIndexOutOfRange(index)){
-            Node<T>* node = getNode(index);
+            Node<T>* node = getNodeAtIndex(index);
             T value = node->element;
             return value;
         }
     }
     T setValueAtIndex(T value, int index) {
         if (!isIndexOutOfRange(index)) {
-            Node<T>* node = getNode(index);
+            Node<T>* node = getNodeAtIndex(index);
             T element = node->element;
             node->element = value;
             return element;
@@ -154,7 +154,7 @@ private:
         return (index<0 || index>size);
     }
 
-    Node<T>* getNode(int index) {
+    Node<T>* getNodeAtIndex(int index) {
         int repeat;
         Node<T>* node;
 
