@@ -36,7 +36,7 @@ public:
         if (isIndexOutOfRange(index)) {
             return;
         }
-        if (isEmpty() || index == size) {
+        if (isEmpty() || (index == size)) {
             addValueIntoTail(value);
             return;
         }
@@ -144,30 +144,30 @@ public:
             node = node->next;
         }
         std::cout << node->element << std::endl;
-
     }
 private:
     bool isEmpty() {
         return (size == 0);
     }
+
+    // index 가 범위 초과일때 예외를 던지도록 추가하기
     bool isIndexOutOfRange(int index) {
         return (index<0 || index>size);
     }
 
     Node<T>* getNodeAtIndex(int index) {
-        int repeat;
         Node<T>* node;
-
+        //if문 보기 편하도록 수정하기
         if (index <= (size - 1) / 2) {
             node = head;
-            repeat = index;
+            int repeat = index;
             while (repeat--) {
                 node = node->next;
             }
         }
         else {
             node = tail;
-            repeat = (size - 1) - index;
+            int repeat = (size - 1) - index;
             while (repeat--) {
                 node = node->prev;
             }
@@ -178,5 +178,4 @@ private:
 private:
     int size;
     Node<T>* head, * tail;
-
 };
