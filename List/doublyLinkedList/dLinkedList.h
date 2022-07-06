@@ -43,8 +43,7 @@ public:
 
         size++;
         Node<T>* newNode = new Node<T>(value);
-        if (index == 0)
-        {
+        if (index == 0) {
             newNode->next = head;
             head->prev = newNode;
             head = newNode;
@@ -58,7 +57,7 @@ public:
         node->next->prev = newNode;
 
     }
-
+    
     void remove(int index) {
         if (isIndexOutOfRange(index)) {
             return;
@@ -129,8 +128,8 @@ public:
         }
         return -1;
     }
-
-    int getSize() {
+    
+    int getSize() {   
         return size;
     }
 

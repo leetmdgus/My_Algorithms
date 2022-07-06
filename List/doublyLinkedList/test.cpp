@@ -9,7 +9,7 @@ void getInIndexTest();
 void setValueAtIndex();
 
 int main() {
-	setValueAtIndex();
+	addValueIntoIndexTest();
 	return 0;
 }
 
@@ -29,11 +29,12 @@ void addValueIntoTailTest() {
 	std::cout << d.getSize() << std::endl;
 }
 
-void addValueIntoIndexTest() {
+void addValueIntoIndexTest() {  ////// 
 	DoublyLinkedList<int> d;
 	for (int i = 0; i < 10; i++) {
 		d.addValueIntoTail(i);
 	}
+    
 	d.printList();
 	d.addValueIntoIndex(100, 3);
 	d.printList();
@@ -50,6 +51,7 @@ void removeTest() {
   for (int i = 0; i < 10; i++) {
 		d.addValueIntoTail(i);
 	}
+d.printList();
   d.remove(1);
   d.printList();
   d.remove(1);
