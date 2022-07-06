@@ -4,7 +4,7 @@
 
 + 삽입 정렬을 이용해 정렬 문제를 풀기위해 문제를 다음과 같이 정의한다. 
 
-![image-20220406182714171](C:\ALGORITHMS\Divide and Conquer\image-20220406182714171.png)
+![image-20220406182714171](..\Divide and Conquer\image-20220406182714171.png)
 
 
 
