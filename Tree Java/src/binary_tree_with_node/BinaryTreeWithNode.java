@@ -1,13 +1,15 @@
-package BinaryTreeWithNode;
+package binary_tree_with_node;
+
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Node{
+class Node {
     char data;
     Node left;
     Node right;
-    Node parent;
+    Node parent;    // 생성자 ctrl shift enter alt shift s
+
     Node(char data, Node left, Node right, Node parent) {
         this.data = data;
         this.left = left;
@@ -17,20 +19,21 @@ class Node{
 }
 
 class BinaryTree {
-    Node root;
-    BinaryTree(char[] data){
+    private Node root;
+
+    BinaryTree(char[] data) {
         Node[] array = new Node[data.length];
-        for(int i = 0; i<data.length; i++){
+        for (int i = 0; i < data.length; i++) {
             array[i] = new Node(data[i], null, null, null);
         }
-        for(int i = 0; i<data.length; i++) {
+        for (int i = 0; i < data.length; i++) {    // A B C D E F G H I J
             int left = 2 * i + 1;
-            int right = 2 * i  + 2;
-            if(left < array.length) {
+            int right = 2 * i + 2;
+            if (left < array.length) {
                 array[i].left = array[left];
                 array[left].parent = array[i];
             }
-            if(right < array.length) {
+            if (right < array.length) {
                 array[i].right = array[right];
                 array[right].parent = array[i];
             }
@@ -39,108 +42,69 @@ class BinaryTree {
     }
 
     void preOrder() {
-        Node node = this.root;
-        if(node == null) {
-            return;
-        }
-        System.out.print(node.data + " ");
-        if(node.left != null) {
-            preOrder(node.left);
-        }
-        if(node.right != null) {
-            preOrder(node.right);
-        }
+        preOrder(this.root);
     }
+
     private void preOrder(Node node) {
-        if(node == null) {
+        if (node == null) {
             return;
         }
         System.out.print(node.data + " ");
-        if(node.left != null) {
-            preOrder(node.left);
-        }
-        if(node.right != null) {
-            preOrder(node.right);
-        }
+        preOrder(node.left);
+        preOrder(node.right);
     }
 
     void inOrder() {
-        Node node = this.root;
-        if(node == null) {
-            return;
-        }
-        if(node.left != null) {
-            inOrder(node.left);
-        }
-        System.out.print(node.data + " ");
-        if(node.right != null) {
-            inOrder(node.right);
-        }
+        inOrder(this.root);
     }
+
     private void inOrder(Node node) {
-        if(node == null) {
+        if (node == null) {
             return;
         }
-        if(node.left != null) {
-            inOrder(node.left);
-        }
+        inOrder(node.left);
         System.out.print(node.data + " ");
-        if(node.right != null) {
-            inOrder(node.right);
-        }
+        inOrder(node.right);
     }
 
     void postOrder() {
-        Node node = this.root;
-        if(node == null) {
-            return;
-        }
-        if(node.left != null) {
-            postOrder(node.left);
-        }
-        System.out.print(node.data + " ");
-        if(node.right != null) {
-            postOrder(node.right);
-        }
-
+        postOrder(this.root);
     }
+
     private void postOrder(Node node) {
-        if(node == null) {
+        if (node == null) {
             return;
         }
-        if(node.left != null) {
-            postOrder(node.left);
-        }
+        postOrder(node.left);
+        postOrder(node.right);
+
         System.out.print(node.data + " ");
-        if(node.right != null) {
-            postOrder(node.right);
-        }
     }
 
     void levelOrder() {
         Node node = this.root;
-        Queue<Node> queue = new LinkedList();
+        Queue<Node> queue = new LinkedList();   // import문 eclipse ctrl+shift + O
         queue.add(node);
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             Node current = queue.poll();
-            System.out.print(current.data + " ");
-            if(current.left != null) {
+            System.out.print(current.data + " ");   // alt shift s -> getter setter
+            //stringbuffer // threadX -> stringbuild
+            if (current.left != null) {
                 queue.offer(current.left);
             }
-            if(current.right != null) {
+            if (current.right != null) {
                 queue.offer(current.right);
             }
         }
         System.out.println();
-     }
-
+    }
 }
 
 public class BinaryTreeWithNode {
     public static void main(String[] args) {
         char[] arr = new char[10];
-        for(int i = 0; i<arr.length; i++) {
-            arr[i] = (char)('A' + i);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (char) ('A' + i);// a b c d e f g h i j
         }
 
         BinaryTree bt = new BinaryTree(arr);
