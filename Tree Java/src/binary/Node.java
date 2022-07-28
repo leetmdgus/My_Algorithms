@@ -2,11 +2,11 @@ package binary;
 
 public class Node<E> {
     private E data;
-    private Node left;
-    private Node right;
-    private Node parent;
+    private Node<E> left;
+    private Node<E> right;
+    private Node<E> parent;
 
-    public Node(E data, Node left, Node right, Node parent) {
+    public Node(E data, Node<E> left, Node<E> right, Node<E> parent) {
         this.data = data;
         this.left = left;
         this.right = right;
@@ -14,17 +14,17 @@ public class Node<E> {
     }
 
     public E getData() {return this.data;}
-    public Node getLeftChild() {
+    public Node<E> getLeftChild() {
         return (this.left != null) ? this.left : null;
     }
 
-    public Node getRightChild() {
+    public Node<E> getRightChild() {
         return (this.right != null) ? this.right : null;
     }
-    public Node getParent() {
+    public Node<E> getParent() {
         return (this.parent != null) ? this.parent : null;
     }
-    public void setLeftChild(Node node) {
+    public void setLeftChild(Node<E> node) {
         if(this.left != null) {
             node.left = this.left.left;  //노드가 단일 노드가 들어왔을때를 가정
             node.right = this.left.right;
@@ -34,13 +34,13 @@ public class Node<E> {
     }
     public void setLeftChild(E data) {
         if(this.left == null) {
-            this.left = new Node(data, null, null, this);
+            this.left = new Node<E>(data, null, null, this);
         } else {
             this.left.data = data;
         }
     }
 
-    public void setRightChild(Node node) {
+    public void setRightChild(Node<E> node) {
         if(this.right != null) {
             node.left = this.right.left;
             node.right = this.right.right;
@@ -57,7 +57,7 @@ public class Node<E> {
         }
     }
 
-    public void setParent(Node node) {
+    public void setParent(Node<E> node) {
         node.left = this;
         this.parent = node;
     }

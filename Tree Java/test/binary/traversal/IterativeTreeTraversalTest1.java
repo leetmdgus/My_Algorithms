@@ -1,7 +1,6 @@
 package binary.traversal;
 
 import binary.Node;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,13 +12,13 @@ class IterativeTreeTraversalTest1 {
 
     @BeforeEach
     void setUp() {
-        ROOT_NODE.setLeftChild(new Node(2, null, null, ROOT_NODE));
-        ROOT_NODE.setRightChild(new Node(3, null, null, ROOT_NODE));
+        ROOT_NODE.setLeftChild(new Node<Integer>(2, null, null, ROOT_NODE));
+        ROOT_NODE.setRightChild(new Node<Integer>(3, null, null, ROOT_NODE));
 
-        ROOT_NODE.getLeftChild().setLeftChild(new Node(4, null, null, ROOT_NODE.getLeftChild()));
-        ROOT_NODE.getLeftChild().setRightChild(new Node(5, null, null, ROOT_NODE.getLeftChild()));
-        ROOT_NODE.getRightChild().setLeftChild(new Node(6, null, null, ROOT_NODE.getRightChild()));
-        ROOT_NODE.getRightChild().setRightChild(new Node(7, null, null, ROOT_NODE.getRightChild()));
+        ROOT_NODE.getLeftChild().setLeftChild(new Node<Integer>(4, null, null, ROOT_NODE.getLeftChild()));
+        ROOT_NODE.getLeftChild().setRightChild(new Node<Integer>(5, null, null, ROOT_NODE.getLeftChild()));
+        ROOT_NODE.getRightChild().setLeftChild(new Node<Integer>(6, null, null, ROOT_NODE.getRightChild()));
+        ROOT_NODE.getRightChild().setRightChild(new Node<Integer>(7, null, null, ROOT_NODE.getRightChild()));
     }
 
     @Test
@@ -27,13 +26,11 @@ class IterativeTreeTraversalTest1 {
         ITERATIVE_TRAVERSAL.preOrder(ROOT_NODE);
         assertEquals(ITERATIVE_TRAVERSAL.showTraversalResult(), "1 2 4 5 3 6 7 ");
     }
-
     @Test
     void inOrder() {
         ITERATIVE_TRAVERSAL.inOrder(ROOT_NODE);
         assertEquals(ITERATIVE_TRAVERSAL.showTraversalResult(), "4 2 5 1 6 3 7 ");
     }
-
     @Test
     void postOrder() {
         ITERATIVE_TRAVERSAL.postOrder(ROOT_NODE);
