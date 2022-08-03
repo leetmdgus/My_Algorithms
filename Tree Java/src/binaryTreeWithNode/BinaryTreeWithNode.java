@@ -1,4 +1,4 @@
-package binary_tree_with_node;
+package binaryTreeWithNode;
 
 
 import java.util.LinkedList;

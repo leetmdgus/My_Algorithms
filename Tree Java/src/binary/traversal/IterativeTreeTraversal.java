@@ -10,14 +10,14 @@ public class IterativeTreeTraversal<E> implements Traversal<E> {
     public void preOrder(Node<E> node) {
         Stack<Node<E>> stack = new Stack<>();
         stack.push(node);
-        while (!stack.isEmpty()) {
-            Node<E> currentNode = stack.pop();
-            sb.append(currentNode.getData()).append(" ");
-            if (currentNode.getRightChild() != null) {
-                stack.push(currentNode.getRightChild());
+
+        while ((node = stack.pop())!= null) {
+            sb.append(node.getData()).append(" ");
+            if (node.getRightChild() != null) {
+                stack.push(node.getRightChild());
             }
-            if (currentNode.getLeftChild() != null) {
-                stack.push(currentNode.getLeftChild());
+            if (node.getLeftChild() != null) {
+                stack.push(node.getLeftChild());
             }
         }
     }
@@ -45,15 +45,14 @@ public class IterativeTreeTraversal<E> implements Traversal<E> {
         stack.push(node);
 
         Stack<Node<E>> result = new Stack<>();
-
         while(!stack.isEmpty()) {
-            Node<E> currentNode = stack.pop();
-            result.push(currentNode);
-            if(currentNode.getLeftChild() != null) {
-                stack.push(currentNode.getLeftChild());
+            node = stack.pop();
+            result.push(node);
+            if(node.getLeftChild() != null) {
+                stack.push(node.getLeftChild());
             }
-            if(currentNode.getRightChild() != null) {
-                stack.push(currentNode.getRightChild());
+            if(node.getRightChild() != null) {
+                stack.push(node.getRightChild());
             }
         }
         while(!result.isEmpty()) {

@@ -1,4 +1,4 @@
-package binary_tree_with_array;
+package binaryTreeWithArray;
 
 class BinaryTree {
     private char[] array;
