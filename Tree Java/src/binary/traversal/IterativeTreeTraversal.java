@@ -45,8 +45,7 @@ public class IterativeTreeTraversal<E> implements Traversal<E> {
         stack.push(node);
 
         Stack<Node<E>> result = new Stack<>();
-        while(!stack.isEmpty()) {
-            node = stack.pop();
+        while((node = stack.pop()) != null) {
             result.push(node);
             if(node.getLeftChild() != null) {
                 stack.push(node.getLeftChild());
