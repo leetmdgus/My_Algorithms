@@ -9,15 +9,20 @@ class HeapTest2 {
 
     @Test
     void add() {
-        for(int i = 1; i<=10; i++) {
+        for(int i = 9; i>2; i--) {
             heap.add(i);
         }
-        assertEquals(heap.toString(), "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]");
+        assertEquals(heap.toString(), "[0, 3, 6, 4, 9, 7, 8, 5]");
     }
 
     @Test
     void remove() {
-
+        for(int i = 9; i>2; i--) {
+            heap.add(i);
+        }
+        heap.remove();
+        heap.remove();
+        assertEquals(heap.toString(), "[0, 5, 6, 8, 9, 7]");
 
     }
 }
