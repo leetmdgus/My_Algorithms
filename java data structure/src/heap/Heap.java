@@ -36,7 +36,7 @@ public class Heap {
         int right = index*2+1;
 
         if(left >= size || right >= size) {
-            return heap.remove(size-1);
+            return data;
         }
 
         while(heap.get(left) < heap.get(index) || heap.get(right) < heap.get(index)) {
