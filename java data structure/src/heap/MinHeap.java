@@ -7,11 +7,13 @@ public class MinHeap implements Heap<Integer> {
     public MinHeap() {
     }
 
+    @Override
     public void add(Integer data) {
         heap.add(data);
         sortBack(0);
     }
-
+    
+    @Override
     public Integer poll() {
         int size = heap.size();
         if (size == 0) {

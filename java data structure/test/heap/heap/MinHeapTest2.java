@@ -8,8 +8,8 @@ import java.util.Queue;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MinHeapTest2 {
-    MinHeap myHeap = new MinHeap();
-    PriorityQueue<Integer> heap = new PriorityQueue<>();
+    Heap myHeap = new MinHeap();
+    Queue<Integer> heap = new PriorityQueue<>();
 
 
     @Test

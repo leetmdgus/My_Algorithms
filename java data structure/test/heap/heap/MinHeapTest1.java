@@ -3,12 +3,13 @@ package heap;
 import org.junit.jupiter.api.Test;
 
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MinHeapTest1 {
-    MinHeap myHeap = new MinHeap();
-    PriorityQueue<Integer> heap = new PriorityQueue<>();
+    Heap myHeap = new MinHeap();
+    Queue<Integer> heap = new PriorityQueue<>();
 
     @Test
     void add() {
