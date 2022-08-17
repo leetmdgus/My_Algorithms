@@ -56,33 +56,8 @@ public class MaxHeap implements Heap<Integer>{
             }
         }
     }
-
-    private String levelOrder() {
-        ArrayList<Integer> result = new ArrayList<>();
-        Queue<int[]> queueDataIndexes = new LinkedList<>();
-        queueDataIndexes.add(new int[]{heap.get(0), 0});
-
-        while (!queueDataIndexes.isEmpty()) {
-            int[] element = queueDataIndexes.poll();
-            int data = element[0];
-            int index = element[1];
-
-            result.add(data);
-
-            int left = index * 2 + 1;
-            int right = index * 2 + 2;
-            if (left < size) {
-                queueDataIndexes.add(new int[]{heap.get(left), left});
-            }
-            if (right < size) {
-                queueDataIndexes.add(new int[]{heap.get(right), right});
-            }
-        }
-        return result.toString();
-    }
-
+    
     public String toString() {
-        return levelOrder();
+        return heap.toString();
     }
-
 }
