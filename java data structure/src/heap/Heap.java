@@ -1,6 +1,6 @@
 package heap;
 
-public interface Heap<E> {
+interface Heap<E> {
     void add(E data);
     E poll();
 }
