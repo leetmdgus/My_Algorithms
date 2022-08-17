@@ -4,23 +4,26 @@ import java.util.*;
 
 public class MaxHeap implements Heap<Integer>{
     private final List<Integer> heap = new ArrayList<>();
+    private int size;
+
     public MaxHeap(){}
 
     @Override
     public void add(Integer data) {
+        size++;
         heap.add(data);
         sortBack(0);
     }
 
     @Override
     public Integer poll() {
-        int size = heap.size();
         if (size == 0) {
             return null;
         }
-
         Collections.swap(heap, 0, size - 1);
         int data = heap.remove(size - 1);
+        size--;
+
         sortFront(0);
         return data;
     }
@@ -28,10 +31,10 @@ public class MaxHeap implements Heap<Integer>{
     private void sortBack(int index) {
         int left = index * 2 + 1;
         int right = index * 2 + 2;
-        if (left < heap.size()) {
+        if (left < size) {
             sortBack(left);
         }
-        if (right < heap.size()) {
+        if (right < size) {
             sortBack(right);
         }
 
@@ -44,7 +47,7 @@ public class MaxHeap implements Heap<Integer>{
     private void sortFront(int index) {
         int left = index * 2 + 1;
         int right = index * 2 + 2;
-        if(left < heap.size() && right < heap.size()) {
+        if(left < size && right < size) {
             if (heap.get(index) < heap.get(left) || heap.get(index) < heap.get(right)) {
                 int child= (heap.get(left) >= heap.get(right)) ? left : right;
 
@@ -68,10 +71,10 @@ public class MaxHeap implements Heap<Integer>{
 
             int left = index * 2 + 1;
             int right = index * 2 + 2;
-            if (left < heap.size()) {
+            if (left < size) {
                 queueDataIndexes.add(new int[]{heap.get(left), left});
             }
-            if (right < heap.size()) {
+            if (right < size) {
                 queueDataIndexes.add(new int[]{heap.get(right), right});
             }
         }
