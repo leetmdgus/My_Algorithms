@@ -5,6 +5,7 @@ import java.util.*;
 public class MinHeap implements Heap<Integer> {
     private final List<Integer> heap = new ArrayList<>();
     private int size;
+
     public MinHeap() {
     }
 
@@ -46,14 +47,18 @@ public class MinHeap implements Heap<Integer> {
     private void sortFront(int index) {
         int left = index * 2 + 1;
         int right = index * 2 + 2;
-        if(left < size && right < size) {
+        if (left < size && right < size) {
             if (heap.get(index) > heap.get(left) || heap.get(index) > heap.get(right)) {
-                int child= (heap.get(left) <= heap.get(right)) ? left : right;
+                int child = (heap.get(left) <= heap.get(right)) ? left : right;
 
                 Collections.swap(heap, index, child);
                 sortFront(child);
             }
         }
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public String toString() {

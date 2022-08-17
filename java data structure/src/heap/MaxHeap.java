@@ -20,6 +20,7 @@ public class MaxHeap implements Heap<Integer>{
         if (size == 0) {
             return null;
         }
+
         Collections.swap(heap, 0, size - 1);
         int data = heap.remove(size - 1);
         size--;
@@ -45,6 +46,12 @@ public class MaxHeap implements Heap<Integer>{
     }
 
     private void sortFront(int index) {
+        if (size == 2) {
+            if(heap.get(0) < heap.get(1)) {
+                Collections.swap(heap, 0, 1);
+                return;
+            }
+        }
         int left = index * 2 + 1;
         int right = index * 2 + 2;
         if(left < size && right < size) {
@@ -56,7 +63,11 @@ public class MaxHeap implements Heap<Integer>{
             }
         }
     }
-    
+
+    public int getSize() {
+        return size;
+    }
+
     public String toString() {
         return heap.toString();
     }
