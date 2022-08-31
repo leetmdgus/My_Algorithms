@@ -1,42 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b32a2fb4-bae0-4130-82f3-ae7708009a52" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Tree Java/src/BinaryTree/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree Java/src/BinaryTree/Traveral/IterativeTreeTraversal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree Java/src/BinaryTree/Traveral/Traversal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree Java/src/BinaryTree/Traveral/test/IterativeTree/Test1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree Java/src/BinaryTree/Traveral/test/IterativeTree/Test2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree Java/src/BinaryTree/Traveral/test/IterativeTree/Test3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree Java/src/BinaryTree/Traveral/test/IterativeTree/Test4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree Java/src/Stack/Stack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DFS/dfs.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Divide and Conquer/Divide and Conquer.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Divide and Conquer/Recursive Call/factorial.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Divide and Conquer/Recursive Call/factorial.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree Java/out/production/Tree Java/BinaryTreeWithNode/BinaryTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tree Java/out/production/Tree Java/BinaryTreeWithNode/BinaryTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree Java/out/production/Tree Java/BinaryTreeWithNode/BinaryTreeWithNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tree Java/out/production/Tree Java/BinaryTreeWithNode/BinaryTreeWithNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree Java/out/production/Tree Java/BinaryTreeWithNode/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tree Java/out/production/Tree Java/BinaryTreeWithNode/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree Java/src/BinaryTreeWithNode/BinaryTreeWithNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree Java/src/BinaryTreeWithNode/BinaryTreeWithNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/.idea/Tree.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/.idea/BinaryTree.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/C++/Binary.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/C++/Binary.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/bin/BinaryTree.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/bin/CoudntFindChildException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/bin/CoudntFindNodeException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/BinaryTree/bin/Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/insertion sort/Insertion Sort.md" beforeDir="false" afterPath="$PROJECT_DIR$/insertion sort/Insertion Sort.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stack/stack.cpp" beforeDir="false" />
-    </list>
+    <list default="true" id="b32a2fb4-bae0-4130-82f3-ae7708009a52" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +20,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/ALGORITHMS"
+    "last_opened_file_path": "C:/ALGORITHMS/Java"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />

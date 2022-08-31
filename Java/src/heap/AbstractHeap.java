@@ -39,7 +39,7 @@ public abstract class AbstractHeap<E> implements Heap<E> {
         }
 
         int parent = (index % 2 != 0 || index == 0) ? index / 2 : index / 2 - 1;
-        if (compare(heap.get(parent), heap.get(index))) {
+        if (compare(heap.get(index), heap.get(parent))) {
             heap.swap(parent, index);
         }
     }
@@ -47,13 +47,13 @@ public abstract class AbstractHeap<E> implements Heap<E> {
     protected void sortFront(int index) {
         int left = index * 2 + 1;
         int right = index * 2 + 2;
-        if(size == 2 && compare(heap.get(0), heap.get(1))) {
+        if(size == 2 && compare(heap.get(1), heap.get(0))) {
             heap.swap(0, 1);
         }
 
         if (left < size && right < size) {
-            if (compare(heap.get(index), heap.get(left)) || compare(heap.get(index), heap.get(right))) {
-                int child = !compare(heap.get(left), heap.get(right)) ? left : right;
+            if (compare(heap.get(left), heap.get(index)) || compare(heap.get(right), heap.get(index))) {
+                int child = !compare(heap.get(right), heap.get(left)) ? left : right;
 
                 heap.swap(index, child);
                 sortFront(child);

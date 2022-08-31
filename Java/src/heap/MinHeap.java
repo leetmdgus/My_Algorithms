@@ -7,6 +7,6 @@ public class MinHeap extends AbstractHeap<Integer> {
 
     @Override
     protected boolean compare(Integer data1, Integer data2) {
-        return data1 > data2;
+        return data1 < data2;
     }
 }
