@@ -28,9 +28,40 @@ public abstract class AbstractHeap<E> implements Heap<E> {
         return data;
     }
 
-    protected abstract void sortBack(int index);
+    protected void sortBack(int index){
+        int left = index * 2 + 1;
+        int right = index * 2 + 2;
+        if (left < getSize()) {
+            sortBack(left);
+        }
+        if (right < getSize()) {
+            sortBack(right);
+        }
 
-    protected abstract void sortFront(int index);
+        int parent = (index % 2 != 0 || index == 0) ? index / 2 : index / 2 - 1;
+        if (compare(heap.get(parent), heap.get(index))) {
+            heap.swap(parent, index);
+        }
+    }
+
+    protected void sortFront(int index) {
+        int left = index * 2 + 1;
+        int right = index * 2 + 2;
+        if(size == 2 && compare(heap.get(0), heap.get(1))) {
+            heap.swap(0, 1);
+        }
+
+        if (left < size && right < size) {
+            if (compare(heap.get(index), heap.get(left)) || compare(heap.get(index), heap.get(right))) {
+                int child = !compare(heap.get(left), heap.get(right)) ? left : right;
+
+                heap.swap(index, child);
+                sortFront(child);
+            }
+        }
+    }
+
+    protected abstract boolean compare(E data1, E data2);
 
     public int getSize() {
         return size;

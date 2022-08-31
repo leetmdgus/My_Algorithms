@@ -30,9 +30,8 @@ class MinHeapTest4 {
             myHeap.add(randomNum);
         }
 
-        for(int i = 0; i<100; i++) {
-            int randomNum = (int) (Math.random()*100+1);
-            heap.remove(randomNum);
+        while(myHeap.getSize() != 1) {
+            heap.remove();
             myHeap.remove();
         }
         assertEquals(heap.toString(), myHeap.toString());
