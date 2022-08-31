@@ -28,8 +28,8 @@ class MinHeapTest1 {
         }
 
         for (int i = 0; i < 2; i++) {
-            heap.poll();
-            myHeap.poll();
+            heap.remove();
+            myHeap.remove();
         }
         assertEquals(heap.toString(), myHeap.toString());
     }

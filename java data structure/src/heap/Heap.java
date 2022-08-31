@@ -2,6 +2,6 @@ package heap;
 
 interface Heap<E> {
     void add(E data);
-    E poll();
+    E remove();
     int getSize();
 }

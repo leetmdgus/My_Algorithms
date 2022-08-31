@@ -9,7 +9,7 @@ import java.util.Queue;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MaxHeapTest1 {
-    Heap myHeap = new MaxHeap();
+    Heap<Integer> myHeap = new MaxHeap();
     Queue<Integer> heap = new PriorityQueue<>(Collections.reverseOrder());
 
     @Test
@@ -22,15 +22,15 @@ class MaxHeapTest1 {
     }
 
     @Test
-    void poll() {
+    void remove() {
         for(int i =1; i<10; i++) {
             heap.add(i);
             myHeap.add(i);
         }
 
         for(int i =0 ; i<2; i++) {
-            heap.poll();
-            myHeap.poll();
+            heap.remove();
+            myHeap.remove();
         }
 
         assertEquals(heap.toString(), myHeap.toString());

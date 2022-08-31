@@ -28,7 +28,7 @@ public class Main {
             StringBuffer sb1 = new StringBuffer();
             StringBuffer sb2 = new StringBuffer();
             while (maxHeap.getSize() != 0) {
-                sb1.append(maxHeap.poll()).append(", ");
+                sb1.append(maxHeap.remove()).append(", ");
                 sb2.append(priority.remove()).append(", ");
             }
             System.out.println("sort max heap");
@@ -56,12 +56,12 @@ public class Main {
             StringBuffer sb1 = new StringBuffer();
             StringBuffer sb2 = new StringBuffer();
             while (minHeap.getSize() != 0) {
-                sb1.append(minHeap.poll()).append(", ");
+                sb1.append(minHeap.remove()).append(", ");
                 sb2.append(priority.remove()).append(", ");
             }
             System.out.println("sort min heap");
             System.out.println(sb1.toString());
-            System.out.println("api max heap");
+            System.out.println("api min heap");
             System.out.println(sb2.toString());
             System.out.println("next enter");
             sc.nextLine();
