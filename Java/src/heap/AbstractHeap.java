@@ -4,8 +4,8 @@ import list.ArrayList;
 import list.List;
 
 public abstract class AbstractHeap<E> implements Heap<E> {
-    protected final List<E> heap = new ArrayList<E>();
-    protected int size;
+    private final List<E> heap = new ArrayList<E>();
+    private int size;
 
     @Override
     public void add(E data) {
@@ -28,7 +28,7 @@ public abstract class AbstractHeap<E> implements Heap<E> {
         return data;
     }
 
-    protected void sortBack(int index){
+    private void sortBack(int index){
         int left = index * 2 + 1;
         int right = index * 2 + 2;
         if (left < getSize()) {
@@ -44,7 +44,7 @@ public abstract class AbstractHeap<E> implements Heap<E> {
         }
     }
 
-    protected void sortFront(int index) {
+    private void sortFront(int index) {
         int left = index * 2 + 1;
         int right = index * 2 + 2;
         if(size == 2 && compare(heap.get(1), heap.get(0))) {
@@ -70,5 +70,4 @@ public abstract class AbstractHeap<E> implements Heap<E> {
     public String toString() {
         return heap.toString();
     }
-
 }
