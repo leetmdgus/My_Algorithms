@@ -3,7 +3,6 @@ package heap;
 import java.util.*;
 
 public class Main {
-
     public static void main(String[] args) {
         List<List<Integer>> lists = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
