@@ -1,9 +1,9 @@
 package list;
 
 public class ArrayList<E> implements List<E> {
-    protected Object[] array = new Object[10];
-    protected int size;
-    protected int capacity = 10;
+    private Object[] array = new Object[10];
+    private int size;
+    private int capacity = 10;
 
     public ArrayList() {
     }
@@ -33,20 +33,55 @@ public class ArrayList<E> implements List<E> {
         return null;
     }
 
-    public Integer getCapacity() {
-        return capacity;
-    }
-
-    public Integer getSize() {
+    @Override
+    public int getSize() {
         return size;
     }
-
+    @Override
     public boolean isEmpty() {
         return (size == 0);
     }
-
+    @Override
     public void clear() {
         array = new Integer[capacity];
+    }
+
+    @Override
+    public E[] clone() {
+        Object[] newArr = new Object[getCapacity()];
+        for (int i = 0; i < getSize(); i++) {
+            newArr[i] = array[i];
+        }
+
+        return (E[]) newArr;
+    }
+
+    @Override
+    public void swap(int index1 , int index2) {
+        if(isValidIndex(index1) && isValidIndex(index2)) {
+            E tmp = (E) array[index1];
+            array[index1] = array[index2];
+            array[index2] = tmp;
+        }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        for(int i = 0; i<getSize()-1; i++) {
+            sb.append(get(i)+ ", ");
+        }
+        sb.append(get(size-1));
+        sb.append(']');
+        return sb.toString();
+    }
+
+    private boolean isValidIndex(int index) {
+        if(index < size || index >= 0) {
+            return true;
+        }
+        return false;
     }
 
     private void expand() {
@@ -58,39 +93,7 @@ public class ArrayList<E> implements List<E> {
             array[i] = newArr[i];
         }
     }
-
-    public E[] clone() {
-        Object[] newArr = new Object[getCapacity()];
-        for (int i = 0; i < getSize(); i++) {
-            newArr[i] = array[i];
-        }
-
-        return (E[]) newArr;
-    }
-
-    public void swap(int index1 , int index2) {
-        if(isValidIndex(index1) && isValidIndex(index2)) {
-            E tmp = (E) array[index1];
-            array[index1] = array[index2];
-            array[index2] = tmp;
-        }
-    }
-
-    private boolean isValidIndex(int index) {
-        if(index < size || index >= 0) {
-            return true;
-        }
-        return false;
-    }
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append('[');
-        for(int i = 0; i<getSize()-1; i++) {
-            sb.append(get(i)+ ", ");
-        }
-        sb.append(get(size-1));
-        sb.append(']');
-        return sb.toString();
+    public Integer getCapacity() {
+        return capacity;
     }
 }

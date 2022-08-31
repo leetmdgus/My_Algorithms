@@ -5,24 +5,21 @@ import list.List;
 
 public abstract class AbstractHeap<E> implements Heap<E> {
     private final List<E> heap = new ArrayList<E>();
-    private int size;
 
     @Override
     public void add(E data) {
-        size++;
         heap.add(data);
         sortBack(0);
     }
 
     @Override
     public E remove() {
-        if (size == 0) {
+        if (heap.isEmpty()) {
             return null;
         }
 
-        heap.swap(0, size - 1);
+        heap.swap(0, heap.getSize() - 1);
         E data = heap.remove();
-        size--;
         sortFront(0);
 
         return data;
@@ -47,11 +44,11 @@ public abstract class AbstractHeap<E> implements Heap<E> {
     private void sortFront(int index) {
         int left = index * 2 + 1;
         int right = index * 2 + 2;
-        if(size == 2 && compare(heap.get(1), heap.get(0))) {
+        if(heap.getSize() == 2 && compare(heap.get(1), heap.get(0))) {
             heap.swap(0, 1);
         }
 
-        if (left < size && right < size) {
+        if (left < heap.getSize() && right < heap.getSize()) {
             if (compare(heap.get(left), heap.get(index)) || compare(heap.get(right), heap.get(index))) {
                 int child = !compare(heap.get(right), heap.get(left)) ? left : right;
 
@@ -64,7 +61,7 @@ public abstract class AbstractHeap<E> implements Heap<E> {
     protected abstract boolean compare(E data1, E data2);
 
     public int getSize() {
-        return size;
+        return heap.getSize();
     }
 
     public String toString() {

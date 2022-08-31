@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         List<List<Integer>> lists = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
+
         int index = 0;
         do {
             lists.add(getRandomList());

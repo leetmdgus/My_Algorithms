@@ -6,4 +6,9 @@ public interface List<E> {
     E get(int index);
     void swap(int index1, int index2);
     String toString();
+
+    int getSize();
+    void clear();
+    boolean isEmpty();
+    E[] clone();
 }
